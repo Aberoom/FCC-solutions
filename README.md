@@ -15,8 +15,7 @@ function mutation(arr) {
   strArr = arr[0].toLowerCase();   
   searchArr = arr[1].toLowerCase();  
   for (var i = 0; i < searchArr.length; i++) {  
-    var chk = strArr.indexOf(searchArr.charAt(i));  
-    if (chk == -1) {  
+    if (strArr.indexOf(searchArr.charAt(i)) == -1) {    
       return false;  
     }  
     return true;  
