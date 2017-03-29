@@ -19,5 +19,6 @@ function mutation(arr) {
     if (chk == -1) {  
       return false;  
     }  
-  }return true;  
+    return true;  
+  }  
 }  
