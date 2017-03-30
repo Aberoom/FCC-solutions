@@ -74,6 +74,5 @@ function destroyer(arr) {
   filterer.push(val[j]);  
   }       
   return filterd.filter(function(value) {  
-    return filterer.indexOf(value) < 0;  
-  });    
+    return filterer.indexOf(value) < 0; });      
 }  
