@@ -31,3 +31,19 @@ function slasher(arr, howMany) {
 }  
 
 _That was easy... too easy..._
+
+
+### Challenge "Title Case a Sentence"
+_Goal_: Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case. 
+
+function titleCase(str) {  
+  var lowStr = str.toLowerCase();  
+  var arrStr = lowStr.split(" ");  
+  var strCap = arrStr.map(function(string){  
+        return string.charAt(0).toUpperCase() + string.slice(1);  
+  });  
+  
+  strCap = strCap.join(" ");  
+  return strCap;  
+}  
+_First time using a .map() function. Is there a better way?_
