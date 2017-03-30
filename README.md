@@ -47,3 +47,17 @@ function titleCase(str) {
   return strCap;  
 }  
 _First time using a .map() function. Is there a better way?_
+
+
+### Challenge "Find the Longest Word in a String"
+_Goal_: Return the length of the longest word in the provided sentence. Your response should be a number.  
+
+function findLongestWord(str) {  
+ var strLength = [];  
+ var splitStr = str.split(" ");  
+  for (var i = 0; i < splitStr.length; i++) {  
+    strLength.push(splitStr[i].length);  
+  }  
+  strLength.sort(function(a,b){return b-a;});  
+  return strLength[0];  
+}  
