@@ -21,3 +21,13 @@ function mutation(arr) {
     return true;  
   }  
 }  
+
+### Challenge "Slasher Flick"  
+_Goal_: Return the remaining elements of an array after chopping off n elements from the head.  
+
+function slasher(arr, howMany) {  
+  var sliceArr = arr.splice(0, howMany);  
+  return arr;  
+}  
+
+_That was easy... too easy..._
