@@ -87,3 +87,24 @@ function getIndexToIns(arr, num) {
   return arr.indexOf(num);  
 }  
 
+### Challenge "Caesars Cipher"
+_Goal_: Write a function which takes a ROT13 encoded string as input and returns a decoded string. All letters will be uppercase. Do not transform any non-alphabetic character (i.e. spaces, punctuation), but do pass them on.
+
+function rot13(str) { // LBH QVQ VG!  
+var charCode = "";  
+var charCodeArr = [];  
+var decoded = "";  
+    for (var j = 0; j < str.length; j++) {  
+      if (str.charCodeAt(j) < 65) {  
+        charCode = str.charCodeAt(j);  
+        charCodeArr.push(charCode);  
+        } else if (str.charCodeAt(j) < 78) {  
+          charCode = 92 - (66 - (str.charCodeAt(j) - 13));  
+          charCodeArr.push(charCode);  
+      } else {   
+      charCode = str.charCodeAt(j) - 13;  
+      charCodeArr.push(charCode);      
+     }  
+    }  
+  return String.fromCharCode.apply(0, charCodeArr);   
+}  
