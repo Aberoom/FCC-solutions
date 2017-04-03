@@ -108,3 +108,24 @@ var decoded = "";
     }  
   return String.fromCharCode.apply(0, charCodeArr);   
 }  
+
+## Intermediate Algorithm Scripting ##
+### Challenge "Sum All Numbers in a Range"  
+_Goal_: We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.
+The lowest number will not always come first.
+
+function sumAll(arr) {  
+  arr.sort(function (a,b) {  
+    return a-b;  
+  });  
+  var sum = 0;  
+  var dif = arr[1]-arr[0];  
+  for (var i = 1; i < dif; i++){  
+    arr.push(arr[1]-i);     
+  }  
+  for (var j = 0; j < arr.length; j++) {  
+    sum += arr[j];  
+  }   
+  return sum;  
+}  
+
