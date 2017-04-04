@@ -167,8 +167,8 @@ function diffArray(arr1, arr2) {
 }  
 _//This baby should work with any set of two arrays, no matter the content I could come up with_
 
-Solution 2:
-function diffArray(arr1, arr2) {
+Solution 2:  
+function diffArray(arr1, arr2) {  
   var nuArr = $(arr2).not(arr1).get();  
   var nuhArr = $(arr1).not(arr2).get();  
   var newArr = nuArr.concat(nuhArr);    
