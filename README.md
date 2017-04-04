@@ -132,6 +132,7 @@ function sumAll(arr) {
 ### Challenge "Diff Two Arrays"
 _Goal_: Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
 
+Solution 1:
 function diffArray(arr1, arr2) {  
   var newArr = [];  
   var theLength = 0;  
@@ -164,4 +165,13 @@ function diffArray(arr1, arr2) {
     }  
   return newArr;  
 }  
-_//This baby should work with any set of two arrays, no matter the content I could come up with
+_//This baby should work with any set of two arrays, no matter the content I could come up with_
+
+Solution 2:
+function diffArray(arr1, arr2) {
+  var nuArr = $(arr2).not(arr1).get();  
+  var nuhArr = $(arr1).not(arr2).get();  
+  var newArr = nuArr.concat(nuhArr);    
+  return newArr;  
+}  
+_//Wow I can't believe I could have solved that in six lines of code instead of 36..._
