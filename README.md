@@ -129,3 +129,39 @@ function sumAll(arr) {
   return sum;  
 }  
 
+### Challenge "Diff Two Arrays"
+_Goal_: Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. In other words, return the symmetric difference of the two arrays.
+
+function diffArray(arr1, arr2) {  
+  var newArr = [];  
+  var theLength = 0;  
+  if (arr1.length < arr2.length) {  
+  theLength = arr2.length;  
+  } else {  
+  theLength = arr1.length;  
+  }  
+  for (var i = 0; i < arr1.length; i++) {  
+    for (var j = 0; j < arr2.length; j++) {  
+      if (arr1[i] === arr2[j]) {  
+        arr1.unshift(arr1[i]);  
+        arr2.unshift(arr2[j]);  
+        arr1.splice(i + 1, 1);  
+        arr2.splice(j + 1, 1);       
+      }  
+    }  
+  }  
+  for (var k = 0; k < theLength; k++) {    
+      if (arr1[k] !== arr2[k]) {  
+        var n = 0;  
+        var m = 0;  
+        for (n += k; n < arr1.length; n++) {  
+          newArr.push(arr1[n]);  
+        }  
+        for (m += k; m < arr2.length; m++) {  
+          newArr.push(arr2[m]);  
+        }  
+      }  
+    }  
+  return newArr;  
+}  
+_//This baby should work with any set of two arrays, no matter the content I could come up with
