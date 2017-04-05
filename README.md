@@ -175,3 +175,53 @@ function diffArray(arr1, arr2) {
   return newArr;  
 }  
 _//Wow I can't believe I could have solved that in six lines of code instead of 36..._
+
+### Challenge "Roman Numeral Converter"  
+_Goal_: Convert the given number into a roman numeral.   
+  
+function convertToRoman(num) {  
+var tablet = [  
+  ["IX", "V", "IV", "I"],  
+  ["XC", "L", "XL", "X"],  
+  ["CM", "D", "CD", "C"],  
+  ["0", "0", "0","M"]   
+];  
+var scroll = [];  
+var scale = String(num).split("").length;  
+
+  for (var j = 0; j < scale; j++) {  
+  var div = 1;  
+  switch (j) {
+    case 0:  
+      div = 1;  
+      break;  
+    case 1:  
+      div = 10;  
+      break;  
+    case 2:  
+      div = 100;  
+      break;  
+    case 3:  
+      div = 1000;  
+      break;  
+  }  
+  var remainder = Math.floor((num/div)%10);  
+  if (remainder === 9) {  
+       scroll.unshift(tablet[j][0]);  
+  } else if (remainder >= 5) {  
+       remainder %= 5;  
+    for (var n = 0; n < remainder; n++) {  
+    scroll.unshift(tablet[j][3]);  
+  } scroll.unshift(tablet[j][1]);  
+  } else if (remainder === 4) {  
+       scroll.unshift(tablet[j][2]);  
+  } else if (remainder > 0) {  
+      for (var i = 0; i < remainder; i++) {  
+    scroll.unshift(tablet[j][3]);  
+  }  
+  }  
+  }  
+
+  return scroll.join("");  
+}  
+_Proud of this one_
