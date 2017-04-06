@@ -225,3 +225,32 @@ var scale = String(num).split("").length;
   return scroll.join("");  
 }  
 _Proud of this one_
+ ### Wherefore Art Thou WORK IN PROGRESS
+ _Goal_ Make a function that looks through an array of objects (first argument) and returns an array of all objects that have matching property and value pairs (second argument). Each property and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.
+ 
+   var propSource = Object.keys(source);
+  var propColl = [];
+   for (var i = 0; i < collection.length; i++) {
+     propColl.push(Object.keys(collection[i]));
+    for (var j = 0; j < propSource.length; j++) {
+      if (propColl[j] == propSource[i]) {
+        switch (propSource[i]) {
+          case "a":
+           
+            break;
+          case "b":
+            
+            break;
+          case "c":
+            
+            break;
+          case "first":
+            
+            break;
+          case "last":
+            
+            break;
+        }
+      }
+    }
+   }
