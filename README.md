@@ -275,3 +275,22 @@ function myReplace(str, before, after) {
   }  
   return str;  
 }  
+
+### Sum all Odd Fibonacci Numbers
+_Goal_ Create a function that sums all odd fibonacci numbers from 0 to the given number.
+
+function sumFibs(num) {  
+  var fibonacci = [0,1];  
+  var inFibo = 0;  
+  var total = 0;  
+  for (var j = 1; inFibo <= num; j++) {  
+  inFibo = fibonacci[j-1] + fibonacci[j];  
+    if (inFibo <= num) {  
+    fibonacci.push(inFibo);    
+  }  
+    if (fibonacci[j] % 2 !== 0) {  
+      total += fibonacci[j];  
+    }  
+  }  
+  return total;  
+}  
